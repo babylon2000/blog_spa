@@ -8,10 +8,9 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, './dist'),
         filename: 'bundle.js',
-        publicPath: 'pathOrUrlWhenProductionBuild'
+        publicPath: 'dist/'
     },
     devServer: {
-        contentBase: path.join(__dirname, './'),
         overlay: true
     },
     module: {
@@ -19,7 +18,10 @@ module.exports = {
             {test: /\.js$/, exclude: /node_modules/, loader: "babel-loader"},
             {
                 test: /\.css$/,
-                use: ['style-loader', 'css-loader']
+                use: [
+                    'style-loader',
+                    'css-loader'
+                ]
             }
         ]
     },
