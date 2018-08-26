@@ -1,7 +1,8 @@
 import ReactDOM from 'react-dom';
 import React from 'react';
-import EmojiGreenHeart from './hello';
+import Post from './components/Post';
+import POSTS from './database/POSTS';
 
-const greeting = <EmojiGreenHeart name="Kostia" />
+const post = POSTS[0];
 
-ReactDOM.render(greeting, document.getElementById('root'));
+ReactDOM.render(<Post post={post} />, document.getElementById('root'));
